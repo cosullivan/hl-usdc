@@ -25,3 +25,20 @@ Withdrawing is easy, anyone with HLUSDC can withdraw with a single function call
 | ------------------- | ------------------------------------------ |
 | HLUSDCIssuerFactory | 0xb4181001abacdc3bfe9b75acc4ec415ef0c88667 |
 | HLUSDC              | 0x908d5ed1909425aa9e6b2dd3eaba590241c66a3a |
+
+# Disclaimer
+
+This is an **experimental project** created for research purposes by the team at No Limit Holdings.
+
+⚠️ **IMPORTANT WARNING** ⚠️
+
+This codebase:
+
+- Is NOT ready for production use
+- Has NOT been professionally audited
+- May contain critical bugs or security vulnerabilities
+- Should be considered highly experimental
+
+Users who choose to interact with or deploy this code do so entirely at their own risk. The developers accept no responsibility for any loss of funds, security incidents, or other damages that may result from its use.
+
+This research project is provided "as is" without warranty of any kind, either expressed or implied.
