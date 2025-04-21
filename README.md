@@ -23,8 +23,8 @@ Withdrawing is easy, anyone with HLUSDC can withdraw with a single function call
 
 | Contract            | Address (Testnet)                          |
 | ------------------- | ------------------------------------------ |
-| HLUSDCIssuerFactory | 0xb4181001abacdc3bfe9b75acc4ec415ef0c88667 |
-| HLUSDC              | 0x908d5ed1909425aa9e6b2dd3eaba590241c66a3a |
+| HLUSDCIssuerFactory | 0xe9f91fcc2552224d10e7b3fcde0c99a9d6b866b3 |
+| HLUSDC              | 0xd8b4ac834d667ec92d0e2ecb31466bc434a3de93 |
 
 # Disclaimer
 

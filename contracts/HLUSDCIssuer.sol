@@ -81,12 +81,18 @@ contract HLUSDCIssuer {
         // check if the contract is locked
         require(mintAmount > 0, "Mint request is not active");
 
-        // token has been transferred on L1 if new balance = spotBalanceSnapshot - mintAmount
+        // Instead of using the initial mintAmount, we use the difference between the new balance and the spotBalanceSnapshot
+        // this prevents a DDOS attack where malicious actors can send dust to the contract by using the diff
+        // users balance across L1 spot and HLUSDC balance will be consistent
+        // admin rescue would be required if user deposit funds into contract themselves in between the mint request and completion
         SpotBalance memory spotBalance = getSpotBalance(address(this), 0);
-        require(spotBalance.total == spotBalanceSnapshot - mintAmount, "Token has not been transferred on L1");
+        // new balance must be less than snapshot balance to indicate token has been transferred on L1
+        require(spotBalanceSnapshot > spotBalance.total, "Token has not been transferred on L1");
+        uint64 balanceDiff = spotBalanceSnapshot - spotBalance.total;
 
+        // mint the difference and send to destination
         uint256 oldBalance = hlusdc.balanceOf(address(this));
-        hlusdc.mint(mintAmount);
+        hlusdc.mint(balanceDiff);
         uint256 newBalance = hlusdc.balanceOf(address(this));
         
         // transfer to recipient

@@ -12,7 +12,7 @@ import "./HLUSDCIssuerFactory.sol";
  */
 contract HLUSDC {
   string public name = "Wrapped Hyperliquid USDC";
-  string public symbol = "WHLUSDC";
+  string public symbol = "USDC.hl";
   uint8 public decimals = 6;
   uint8 public spotDecimals = 8;
 
